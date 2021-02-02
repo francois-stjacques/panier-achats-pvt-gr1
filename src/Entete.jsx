@@ -1,3 +1,5 @@
+import './Entete.css';
+
 export default function Entete(props) {
     return (
         <header>
