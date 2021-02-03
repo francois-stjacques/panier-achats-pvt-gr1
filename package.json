@@ -33,5 +33,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepageDisabled": "https://cdem.github.io/panier-achats-pvt-gr1/"
 }
