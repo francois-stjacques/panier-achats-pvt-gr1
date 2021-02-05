@@ -1,4 +1,4 @@
-import './ListeProduits.css';
+import './ListeProduits.scss';
 import Produit from './Produit';
 import tabProduits from './data/produits.json';
 

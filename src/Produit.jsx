@@ -1,6 +1,7 @@
-import './Produit.css';
+import BtnAjoutPanier from './BtnAjoutPanier';
+import './Produit.scss';
 
-function Produit(props) {
+export default function Produit(props) {
     return (
         <li className="Produit">
             <div className="image">
@@ -9,10 +10,8 @@ function Produit(props) {
             <div className="info">
                 <h3>{props.nom}</h3>
                 <p className="prix">{props.prix} $CA</p>
-                <button>Ajouter au panier</button>
+                <BtnAjoutPanier />
             </div>
         </li>
     );
 }
-
-export default Produit;
