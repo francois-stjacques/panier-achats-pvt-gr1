@@ -37,5 +37,6 @@
       "last 1 safari version"
     ]
   },
-  "homepageDisabled": "https://cdem.github.io/panier-achats-pvt-gr1/"
+  "homepage-instructions": "Avant de déployer sur GitHub vous devez configurer correctement la propriété homepage ci-dessous : 1) retirer le suffixe '-inactif' de l'étiquette, et 2) remplacer 'username' par le nom de votre compte GitHub et 'depot-gh' par le nom de votre dépôt GitHub dans la valeur de la propriété.",
+  "homepage-inactif": "https://cdem.github.io/panier-achats-pvt-gr1/"
 }
