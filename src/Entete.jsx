@@ -35,7 +35,7 @@ export default function Entete(props) {
           <Badge onClick={basculerSommairePanier} badgeContent="5" color="primary">
             <ShoppingCartIcon />
           </Badge>
-          <SommairePanier cacher={cacheSommaire} />
+          <SommairePanier cacher={cacheSommaire} etatPanier={props.etatPanier} />
         </li>
         <li>Mon compte</li>
       </ul>

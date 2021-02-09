@@ -2,7 +2,7 @@ import BtnAjoutPanier from './BtnAjoutPanier';
 import './Produit.scss';
 
 export default function Produit(props) {
-    console.log("Panier dans Produit : ", props.etatPanier);
+    //console.log("Panier dans Produit : ", props.etatPanier);
 
     /**
      * Ajoute l'article au panier
@@ -15,8 +15,9 @@ export default function Produit(props) {
         else {
             panier[props.id] = {prix: props.prix, qte: 1}
         }
-
         // Maintenant il faut changer l'état du panier avec setPanier
+        setPanier(panier);
+        console.log(panier);
     }
 
     return (

@@ -16,7 +16,7 @@ export default function Page() {
 
   return (
     <div className="Page">
-      <Entete />
+      <Entete etatPanier={etatPanier} />
       <section className="contenuPrincipal">
         <ListeProduits etatPanier={etatPanier} />
       </section>
