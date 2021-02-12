@@ -6,4 +6,9 @@
   bottom:-40px;
   padding: 5px;
   font-size: 0.9em;
+  
+  span:not(:last-of-type) {
+    padding-right: 5px;
+    border-right: 1px solid white;
+  }
 }

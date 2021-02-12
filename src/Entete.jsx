@@ -22,8 +22,26 @@ export default function Entete(props) {
   
   const basculerSommairePanier =  () => setCacheSommaire(cacheSommaire ? false : true);
 
+  // Accéder à l'état du panier qui est reçu dans les props
+  const [panier, setPanier] = props.etatPanier; // Décomposition de tableaux (et d'objets) (Destructuring)
+
+  // Calculer le nombre d'articles total du panier
+  // Méthode 1 : programmation impérative (moins expressive)
+
+  // const articlesTab = Object.values(panier);
+  // let nbArticles = 0;
+  // for (let i = 0; i < articlesTab.length; i++) {
+  //   nbArticles += articlesTab[i].qte;    
+  // }
+
+  // Calculer le nombre d'articles total du panier
+  // Méthode 2 : programmation déclarative (plus expressive)
+  // [ {prix: 19, qte: 3}, {prix: 26.9, qte:13}, {prix: 254.78, qte: 1} ]
+  // const nbArticles = Object.values(panier).reduce( (accumulateur, eltCourant)  => accumulateur + eltCourant.qte, 0);
+  //console.log("Le TABLEAU des articles dans le panier : ", articlesTab);
+
   return (
-    <header className="Entete">
+    <header className="Entete"> 
       <div>Logo</div>
       <ul className="navPrincipale">
         <li>Produits</li>
@@ -32,7 +50,7 @@ export default function Entete(props) {
       </ul>
       <ul className="navUtil">
         <li>
-          <Badge onClick={basculerSommairePanier} badgeContent="5" color="primary">
+          <Badge onClick={basculerSommairePanier} badgeContent={Object.values(panier).reduce( (accumulateur, eltCourant)  => accumulateur + eltCourant.qte, 0)} color="primary">
             <ShoppingCartIcon />
           </Badge>
           <SommairePanier cacher={cacheSommaire} etatPanier={props.etatPanier} />

@@ -6,12 +6,12 @@ export default function SommairePanier(props) {
   const infoPanier = retournerInfoPanier(panier);
   return (
     <div className={'SommairePanier' + (props.cacher?' cacher':'')}>
-      <span className="nbArticles">Articles différents : </span>
-      <span className="qteArticles">Articles total : </span>
-      <span className="sousTotal">Sous-total : </span>
-      <span className="tps">TPS : </span>
-      <span className="tvq">TVQ : </span>
-      <span className="total">Total : </span>
+      <span className="nbArticles">Articles différents : {infoPanier.nbArticles}</span>
+      <span className="qteArticles">Articles total : {infoPanier.qteArticles}</span>
+      <span className="sousTotal">Sous-total : {infoPanier.st}</span>
+      <span className="tps">TPS : {infoPanier.tps}</span>
+      <span className="tvq">TVQ : {infoPanier.tvq}</span>
+      <span className="total">Total : {infoPanier.total}</span>
     </div>
   );
 }
@@ -39,8 +39,17 @@ function retournerInfoPanier(pan) {
   }, 0);
 
   // Sous-total
-  let sousTotal = articles.reduce((i, c) => c.prix*c.qte + i, 0);
+  let sousTotal = articles.reduce((accumulateur, articleCourant) => articleCourant.prix*articleCourant.qte + accumulateur, 0);
+  info.st = sousTotal.toFixed(2);
 
-  console.log(sousTotal);
+  // TPS 
+  let tps = sousTotal * 0.05;
+  info.tps = tps.toFixed(2);
 
+  let tvq = sousTotal * 0.09975;
+  info.tvq = tvq.toFixed(2);
+
+  info.total = (sousTotal + tps + tvq).toFixed(2);
+
+  return info;
 }

@@ -7,4 +7,8 @@
   border: none;
   outline: none;
   font-size: 1.2em;
+
+  &.rouge {
+    background-color: red;
+  }
 }

@@ -16,8 +16,11 @@ export default function Produit(props) {
             panier[props.id] = {prix: props.prix, qte: 1}
         }
         // Maintenant il faut changer l'état du panier avec setPanier
-        setPanier(panier);
-        console.log(panier);
+        // Il faut passer à setPanier un NOUVEL objet (obtenu par clonage)
+        setPanier(JSON.parse(JSON.stringify(panier))); // {...panier} // Spread operator
+        //const nouveauPanier = Object.assign({}, panier);
+        //setPanier(nouveauPanier); 
+        //console.log("Clone obtenu avec assign() : ", nouveauPanier);
     }
 
     return (
