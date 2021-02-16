@@ -20,7 +20,7 @@ export default function Entete(props) {
   const [cacheSommaire, setCacheSommaire] = useState(true);
   //console.log("Etat du SP : ", cacheSommaire);
   
-  const basculerSommairePanier =  () => setCacheSommaire(cacheSommaire ? false : true);
+  const basculerSommairePanier =  () => setCacheSommaire(!cacheSommaire);
 
   // Accéder à l'état du panier qui est reçu dans les props
   const [panier, setPanier] = props.etatPanier; // Décomposition de tableaux (et d'objets) (Destructuring)
