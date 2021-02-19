@@ -4,11 +4,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './index.scss';
 import Page from './Page';
 
-const baseName = (window.location.pathname.search("github") != -1) ? "/panier-achats-pvt-gr1":"";
-
 ReactDOM.render(
   <React.StrictMode>
-    <Router basename={baseName}>
+    <Router>
       <Page />
     </Router>
   </React.StrictMode>,
