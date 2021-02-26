@@ -40,5 +40,5 @@
     ]
   },
   "homepage-aide": "Avant de déployer sur GitHub vous devez configurer correctement la propriété homepage ci-dessus : 1) retirer le suffixe '-inactif' de l'étiquette, et 2) remplacer le nom de compte et le nom de dépôt GitHub par les vôtres dans la valeur de la propriété.",
-  "homepage-inactif": "https://cdem.github.io/panier-achats-pvt-gr1/"
+  "homepage": "https://francois-stjacques.github.io/panier-achats-pvt-gr1/"
 }
